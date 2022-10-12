@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+    turnosweb-http:
+        container_name: TurnosWeb-http
+        build: .
+        ports:
+            - 90:80
+        volumes:
+            - "./:/var/www/html"
+
+        restart: always
+
