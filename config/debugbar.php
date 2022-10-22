@@ -14,7 +14,7 @@ return [
      |
      */
 
-    'enabled' => env('DEBUGBAR_ENABLED', null),
+    'enabled' => env('DEBUGBAR_ENABLED', true),
     'except' => [
         'telescope*',
         'horizon*',
@@ -56,7 +56,7 @@ return [
     |
     */
 
-    'editor' => env('DEBUGBAR_EDITOR', 'phpstorm'),
+    'editor' => env('DEBUGBAR_EDITOR', 'vscode'),
 
     /*
     |--------------------------------------------------------------------------
@@ -158,7 +158,7 @@ return [
         'db'              => true,  // Show database (PDO) queries and bindings
         'views'           => true,  // Views with their data
         'route'           => true,  // Current route information
-        'auth'            => false, // Display Laravel authentication status
+        'auth'            => true, // Display Laravel authentication status
         'gate'            => true,  // Display Laravel Gate checks
         'session'         => true,  // Display session data
         'symfony_request' => true,  // Only one can be enabled..
@@ -171,7 +171,7 @@ return [
         'config'          => false, // Display config settings
         'cache'           => false, // Display cache events
         'models'          => true,  // Display models
-        'livewire'        => true,  // Display Livewire (when available)
+        'livewire'        => false,  // Display Livewire (when available)
     ],
 
     /*

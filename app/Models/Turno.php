@@ -14,7 +14,7 @@ class Turno extends Model
     }
 
     public function cliente(){
-        return $this->hasOne(User::class, );
+        return $this->belongsTo(User::class, 'usuario', 'id' );
     }
 
 }
