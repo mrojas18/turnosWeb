@@ -15,7 +15,7 @@ return new class extends Migration
     {
         //
         Schema::table('tiendas', function(Blueprint $table){
-            $table->integer('propietario')->unsigned()->after('propitario');
+            $table->integer('propietario')->unsigned()->after('propietario');
         });
     }
 

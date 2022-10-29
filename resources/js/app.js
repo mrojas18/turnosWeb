@@ -1,23 +1,12 @@
-import './bootstrap';
-import '../css/app.css';
+import '../scss/app.scss'
+import '../scss/material-dashboard/material-dashboard.scss'
 
-import { createApp, h } from 'vue';
-import { createInertiaApp } from '@inertiajs/inertia-vue3';
-import { InertiaProgress } from '@inertiajs/progress';
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
+// Import all of Bootstrap's JS
+import * as bootstrap from 'bootstrap'
+import PerfectScrollbar from 'perfect-scrollbar';
 
-const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+import './plugins/smooth-scrollbar.min.js'
+import './material-dashboard'
 
-createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
-    setup({ el, app, props, plugin }) {
-        return createApp({ render: () => h(app, props) })
-            .use(plugin)
-            .use(ZiggyVue, Ziggy)
-            .mount(el);
-    },
-});
-
-InertiaProgress.init({ color: '#4B5563' });

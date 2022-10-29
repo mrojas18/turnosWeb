@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::table('turnos', function(Blueprint $table){
             $table->integer('usuario')->unsigned()->nullable()
                 ->default(null)
-                ->after('propitario')
+                ->after('propietario')
                 ->change();
         });
     }

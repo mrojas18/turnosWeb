@@ -15,7 +15,7 @@ class Servicio extends Model
     }
 
     public function tienda(){
-        return $this->hasOne(Tienda::class, 'id', 'tienda');
+        return $this->belongsTo(Tienda::class, 'id', 'tienda');
     }
 
     public function turnos(){
