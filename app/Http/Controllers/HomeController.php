@@ -26,7 +26,8 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function dashboard(){
-        return view('dashboard');
+    public function dashboard(Request $request){
+        $tiendas = $request->user()->tiendas;
+        return view('dashboard', ['tiendas'=>$tiendas]);
     }
 }

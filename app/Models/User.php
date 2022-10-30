@@ -59,4 +59,9 @@ class User extends Authenticatable
     public function turnos(){
         return $this->hasMany(Turno::class, 'usuario');
     }
+
+    public function tiendas(){
+        return $this->hasMany(Tienda::class, 'propietario');
+    }
+
 }
